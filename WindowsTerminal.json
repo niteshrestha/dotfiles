@@ -1,0 +1,106 @@
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "initialCols": 140,
+    "profiles": [
+        {
+            // Make changes here to the powershell.exe profile
+            "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+            "name": "Windows PowerShell",
+            "commandline": "powershell.exe",
+            "hidden": false,
+            "colorScheme": "Brogrammer",
+            "fontFace": "Delugia Nerd Font",
+            "fontSize": 12,
+            "startingDirectory": "%USERPROFILE%\\source\\repos"
+        },
+        {
+            // Make changes here to the cmd.exe profile
+            "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+            "name": "Command Prompt",
+            "commandline": "cmd.exe",
+            "hidden": false,
+            "colorScheme": "Cobalt Neon",
+            "fontFace": "Cascadia Code"
+        },
+        {
+            "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+            "hidden": false,
+            "name": "Azure Cloud Shell",
+            "source": "Windows.Terminal.Azure",
+            "fontFace": "Cascadia Code"
+        },
+        {
+            "guid": "{70b1f6ba-1675-4244-b350-0f6605e31897}",
+            "name": "Git Bash",
+            "commandline": "\"%PROGRAMFILES%\\git\\usr\\bin\\bash.exe\" -i -l",
+            "icon": "ms-appdata:///local/gitbash.png",
+            "startingDirectory": "%USERPROFILE%\\source\\repos",
+            "colorScheme": "Brogrammer",
+            "fontFace": "Cascadia Code"
+        }
+    ],
+    // Add custom color schemes to this array
+    "schemes": [
+        {
+            "background": "#142838",
+            "black": "#1F1F1F",
+            "blue": "#2A84D2",
+            "brightBlack": "#D6DBE5",
+            "brightBlue": "#1081D6",
+            "brightCyan": "#0F7DDB",
+            "brightGreen": "#1DD361",
+            "brightPurple": "#5350B9",
+            "brightRed": "#DE352E",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#F3BD09",
+            "cyan": "#1081D6",
+            "foreground": "#D6DBE5",
+            "green": "#2DC55E",
+            "name": "Brogrammer",
+            "purple": "#4E5AB7",
+            "red": "#F81118",
+            "white": "#D6DBE5",
+            "yellow": "#ECBA0F"
+        },
+        {
+            "background": "#142838",
+            "black": "#142631",
+            "blue": "#8FF586",
+            "brightBlack": "#FFF688",
+            "brightBlue": "#3C7DD2",
+            "brightCyan": "#6CBC67",
+            "brightGreen": "#8FF586",
+            "brightPurple": "#8230A7",
+            "brightRed": "#D4312E",
+            "brightWhite": "#8FF586",
+            "brightYellow": "#E9F06D",
+            "cyan": "#8FF586",
+            "foreground": "#8FF586",
+            "green": "#3BA5FF",
+            "name": "Cobalt Neon",
+            "purple": "#781AA0",
+            "red": "#FF2320",
+            "white": "#BA46B2",
+            "yellow": "#E9E75C"
+        }
+    ],
+    // Add any keybinding overrides to this array.
+    // To unbind a default keybinding, set the command to "unbound"
+    "keybindings": [
+        {
+            "command": "splitHorizontal",
+            "keys": [
+                "ctrl+-"
+            ]
+        },
+        {
+            "command": "splitVertical",
+            "keys": [
+                "ctrl+\\"
+            ]
+        }
+    ]
+}
