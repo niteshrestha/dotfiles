@@ -2,9 +2,6 @@
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.formatOnSave": true,
-    "python.pythonPath": "C:\\Users\\Nitesh Shrestha\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
-    "workbench.iconTheme": "material-icon-theme",
-    "files.autoSave": "afterDelay",
     "liveServer.settings.donotShowInfoMsg": true,
     "peacock.favoriteColors": [
         {
@@ -62,11 +59,22 @@
     ],
     "editor.minimap.enabled": false,
     "liveServer.settings.donotVerifyTags": true,
-    "workbench.sideBar.location": "left",
-    "workbench.activityBar.visible": true,
-    "workbench.statusBar.visible": true,
     "window.menuBarVisibility": "default",
-    "workbench.colorTheme": "Visual Studio Dark",
-    "window.zoomLevel": 0,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.suggestSelection": "first",
+    "git.autofetch": true,
+    "git.enableCommitSigning": true,
+    "workbench.colorTheme": "Atom One Dark",
+    "window.zoomLevel": 1,
+    "terminal.integrated.cursorStyle": "line",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
