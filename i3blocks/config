@@ -1,0 +1,47 @@
+command=/home/niteshrestha/.config/i3blocks/blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+[mediaplayer]
+instance=spotify
+interval=5
+signal=10
+
+[volume]
+label=
+interval=10
+signal=10
+
+[cpu_usage]
+label=
+interval=1
+
+[temperature]
+command=sensors -u coretemp-isa-0000 | grep temp1_input | cut -c 15-17 | xargs printf '%d°'
+label=
+interval=1
+
+[fan]
+command=sensors -u dell_smm-virtual-0 | grep fan1_input | cut -c 15-18
+label=
+interval=1
+
+[memory]
+label=
+interval=1
+
+[battery2]
+markup=pango
+interval=30
+
+[essid]
+interval=10
+#INTERFACE=wlp2s0
+
+[date]
+command=date '+%B %d'
+interval=once
+
+[time]
+command=date '+%I:%M %p'
+interval=1
