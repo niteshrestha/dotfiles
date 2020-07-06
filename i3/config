@@ -48,10 +48,10 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 5%- # decrease screen brightn
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec XDG_CURRENT_DESKTOP=KDE && i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # start dolphin
-bindsym $mod+x exec XDG_CURRENT_DESKTOP=KDE && dolphin
+bindsym $mod+x exec dolphin
 
 # start a browser
 bindsym $mod+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser)
@@ -65,7 +65,7 @@ bindsym $mod+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+space exec rofi -show drun -theme ~/.config/styles/rofi.rasi
+bindsym $mod+space exec rofi -show drun -hide-scrollbar -theme ~/.config/styles/rofi.rasi -show-icons
 
 # change focus
 bindsym $mod+j focus left
@@ -123,16 +123,16 @@ bindsym Shift+Print exec spectacle -brn -o ~/Pictures/Screenshots/$(date +%F-%H-
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: "
-set $ws4 "4: "
-set $ws5 "5: "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10: "
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -161,10 +161,12 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 assign[class="Code"] $ws2
 assign[class="azuredatastudio"] $ws2
 assign[class="Firefox"] $ws3
+assign[class="Google-chrome"] $ws3
 assign[class="TelegramDesktop"] $ws4
 assign[class="Skype"] $ws4
 assign[class="Slack"] $ws4
 for_window [class="Spotify"] move to workspace $ws5
+assign[class="Mailspring"] $ws6
 assign[class="VirtualBox Manager"] $ws10
 
 # Plasma compatibility improvements
@@ -225,17 +227,14 @@ bindsym $mod+r mode "resize"
 # Toggle bar visibility
 bindsym $mod+b bar mode toggle
 
-# Open KDE settings
-bindsym $mod+i exec XDG_CURRENT_DESKTOP=KDE && systemsettings5
-
 for_window [class=".*"] border pixel 0
 gaps inner 4
 smart_gaps on
-smart_borders on
+# smart_borders on
 
 popup_during_fullscreen smart
 focus_follows_mouse no
-
+mouse_warping none
 
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
@@ -252,19 +251,19 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	position top
-  tray_output primary
-  strip_workspace_numbers yes
-  status_command i3blocks
-  colors {
-  background $bg-color
-  separator #757575
-  focused_workspace  $bg-color          $bg-color          $text-color
-  inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-  urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
-}
+#bar {
+#	position top
+#  tray_output primary
+#  strip_workspace_numbers yes
+#  status_command i3blocks
+#  colors {
+#  background $bg-color
+#  separator #757575
+#  focused_workspace  $bg-color          $bg-color          $text-color
+#  inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#  urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#	}
+#}
 
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
 #exec_always xrandr --output eDP-1 --primary --mode 1366x768 --pos 277x1080 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal
@@ -272,4 +271,17 @@ exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
 # Shutdown Menu
 bindsym $mod+Escape exec ~/.config/i3blocks/blocks/shutdown_menu
 
-exec compton -f
+# Open KDE settings
+bindsym $mod+i exec systemsettings5
+
+# Compositor
+exec --no-startup-id compton -f
+
+# Notification Deamon
+exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
+
+# Multiple Screens
+exec --no-startup-id autorandr -c
+
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
