@@ -1,0 +1,42 @@
+set nu relativenumber
+set incsearch
+set nohlsearch
+set scrolloff=8
+
+let mapleader=" "
+map fd :vsc Edit.FormatDocument<CR>
+nnoremap m :vsc Edit.NextMethod<CR>
+nnoremap M :vsc Edit.PreviousMethod<CR>
+nnoremap [ :vsc Window.PreviousTab<CR>
+nnoremap ] :vsc Window.NextTab<CR>
+
+map <leader>sw :vsc Edit.SurroundWith<CR>
+
+map <leader>b :vsc Debug.ToggleBreakpoint<CR>
+map <leader>np :vsc Project.ManageNuGetPackages<CR>
+map <leader>pr :vsc Project.AddProjectReference<CR>
+
+" Views
+map <leader>o :vsc View.Output<CR>
+map <leader>el :vsc View.ErrorList<CR>
+map <leader>tl :vsc View.TaskList<CR>
+map <leader>se :vsc View.SolutionExplorer<CR>
+map <leader>gc :vsc View.GitWindow<CR>
+
+" Unit Testing
+map <leader>te :vsc TestExplorer.ShowTestExplorer<CR>
+map <leader>tr :vsc TestExplorer.RunAllTestsInContext<CR>
+map <leader>ta :vsc TestExplorer.RunAllTests<CR>
+
+map R :vsc Refactor.Rename<CR>
+nnoremap gd :vsc Edit.GoToDefinition<CR>
+nnoremap gi :vsc Edit.GoToImplementation<CR>
+nnoremap gr :vsc Edit.FindAllReferences<CR>
+nnoremap pd :vsc Edit.PeekDefinition<CR>
+
+inoremap jj <Esc>
+
+nnoremap <leader>h _
+nnoremap <leader>l $
+nnoremap <leader>j G
+nnoremap <leader>k gg
