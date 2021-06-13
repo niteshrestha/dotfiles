@@ -1,10 +1,11 @@
 set nu relativenumber
+set ignorecase
 set incsearch
 set nohlsearch
 set scrolloff=8
 
 let mapleader=" "
-map fd :vsc Edit.FormatDocument<CR>
+map = :vsc Edit.FormatDocument<CR>
 nnoremap m :vsc Edit.NextMethod<CR>
 nnoremap M :vsc Edit.PreviousMethod<CR>
 nnoremap [ :vsc Window.PreviousTab<CR>
@@ -33,6 +34,10 @@ nnoremap gd :vsc Edit.GoToDefinition<CR>
 nnoremap gi :vsc Edit.GoToImplementation<CR>
 nnoremap gr :vsc Edit.FindAllReferences<CR>
 nnoremap pd :vsc Edit.PeekDefinition<CR>
+
+" Visual Studio Navigation
+nnoremap gf :vsc View.NavigateForward<CR>
+nnoremap gb :vsc View.NavigateBackward<CR>
 
 inoremap jj <Esc>
 
