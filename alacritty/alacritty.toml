@@ -1,18 +1,18 @@
 [general]
 live_config_reload = true
-import = ["~/.config/alacritty/themes/gruvbox.toml"] 
+import = ["~/.config/alacritty/themes/rosepine.toml"] 
 
 [window]
-decorations = "Buttonless"
-opacity =  0.95
 startup_mode = "SimpleFullScreen"
+opacity =  0.9
+blur = false
 padding = { x = 5, y = 5 }
 
 [font]
 normal = { family = "MesloLGS NF", style  = "Regular" }
 bold = { family = "MesloLGS NF", style  = "Bold" }
 italic = { family = "MesloLGS NF", style  = "Italic" }
-size = 14
+size = 18
 
 [mouse]
 hide_when_typing = true
