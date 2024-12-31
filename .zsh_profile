@@ -1,0 +1,10 @@
+alias vi=nvim
+alias vim=nvim
+
+# zsh suggestion plugin
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+bindkey -s ^f "tmux-sessionizer\n"
+
+# Add .NET Core SDK tools
+export PATH="$PATH:/Users/niteshrestha/.dotnet/tools"
