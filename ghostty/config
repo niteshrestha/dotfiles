@@ -1,15 +1,15 @@
-theme = gruvboxdark
-font-size = 19
-background-opacity = 0.95
-background-blur-radius = 20
+theme = Rose Pine
+font-size = 18
+#background-opacity = 0.95
+#background-blur-radius = 20
 
+#fullscreen = true
 macos-titlebar-style = hidden
 window-decoration = true
-fullscreen = true
-macos-non-native-fullscreen = true
-
-window-padding-x = 5
 
 mouse-hide-while-typing = true
 
 confirm-close-surface = false
+
+shell-integration-features = ssh-env,ssh-terminfo
+
